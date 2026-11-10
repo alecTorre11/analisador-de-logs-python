@@ -1,11 +1,19 @@
-from  pathlib import Path
-caminho_arquivo = Path (  "C:Users\alecsam.torres\Documents\programação\Python\projeto\analisador-de-logs-python\logs")
+from pathlib import Path
+
+BASE_DIR = Path (__file__).resolve().parent
+
+
+arq_logs = BASE_DIR / "logs" / "auth_logs_5000.txt"
 
 
 
 
 tentativas= 0
-with open( caminho_arquivo, "r")  as log:
+
+
+
+
+with open(arq_logs, "r")  as log:
     for linhas in log:
         if "Failed password" in linhas:
 
@@ -16,5 +24,3 @@ with open( caminho_arquivo, "r")  as log:
            print(linhas)
 
 print(f"A quantidade de tentativas de login mal sucedidas foram = {tentativas}")
-
-
