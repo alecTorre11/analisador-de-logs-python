@@ -1,5 +1,11 @@
+from  pathlib import Path
+caminho_arquivo = Path (  "C:Users\alecsam.torres\Documents\programação\Python\projeto\analisador-de-logs-python\logs")
+
+
+
+
 tentativas= 0
-with open("auth_logs_5000.txt", "r")  as log:
+with open( caminho_arquivo, "r")  as log:
     for linhas in log:
         if "Failed password" in linhas:
 
